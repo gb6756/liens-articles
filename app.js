@@ -157,16 +157,17 @@ window.addEventListener('DOMContentLoaded', function() {
     }
 
     // Ajout d'un paramètre anti-cache (?v=timestamp)
-    fetch('liens-articles.csv?v=' + new Date().getTime())
+    fetch('liens-articles.csv)
         .then(response => {
             if (!response.ok) {
-                throw new Error(`Fichier introuvable sur le serveur (Erreur ${response.status})`);
+                throw new throw new Error("Fichier introuvable");
             }
             return response.text();
         })
         .then(csvText => {
             Papa.parse(csvText, {
                 header: true,
+				delimite: "@",
                 skipEmptyLines: true,
                 complete: function(res) {
                     if (res.data && res.data.length > 0) {
@@ -179,10 +180,7 @@ window.addEventListener('DOMContentLoaded', function() {
                         }
 
                         // Écouteurs d'événements sur les champs de filtrage
-                        setupFilterListeners();
-
-                        // Premier affichage
-                        render();
+                        applyFilters();
                     } else {
                         if (statusEl) {
                             statusEl.style.color = '#dc2626';
