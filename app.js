@@ -166,7 +166,7 @@ window.addEventListener('DOMContentLoaded', function() {
         .then(csvText => {
             Papa.parse(csvText, {
                 header: true,
-				delimite: "@",
+				delimiter: "@",
                 skipEmptyLines: true,
                 complete: function(res) {
                     if (res.data && res.data.length > 0) {
