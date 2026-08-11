@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de Bibliothèque - Catalogue Local</title>
+    <!-- Parseur CSV spécialisé -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+	<link rel="stylesheet" media="screen" href="style.css">
+    <style>
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1 style="margin:0;">📚 Liens vers articles, documents ...</h1>
+    </header>
+
+    <!-- Zone de sélection du fichier local -->
+    <div class="card" style="background: #eef2f7; border-color: #cbd5e1;">
+        <label style="display:block; font-weight:bold; margin-bottom:8px;">📁 Sélectionnez votre fichier CSV local (ex: liens-articles) :</label>
+        <input type="file" id="csvFileInput" accept=".csv" style="padding: 5px; background: white; border: 1px solid #ccc; border-radius: 4px;">
+        <span id="status" style="margin-left: 15px; font-weight: bold; font-size: 0.9rem;"></span>
+    </div>
+
+    <!-- Filtres -->
+    <div class="card">
+        <h3 style="margin-top:0;">🔍 Filtres de recherche</h3>
+        <div class="filter-grid">
+            <div class="filter-item"><label>Lieu</label><input type="text" id="fLieu" oninput="applyFilters()"></div>
+            <div class="filter-item"><label>Sujet</label><input type="text" id="fSujet" oninput="applyFilters()"></div>
+            <div class="filter-item"><label>Référence</label><input type="text" id="fReference" oninput="applyFilters()"></div>
+            <div class="filter-item"><label>Site Internet</label><input type="text" id="fSite" oninput="applyFilters()"></div>			
+        </div>
+    </div>
+	<div class="results-info">
+		<span id="linkCount">Chargement du catalogue...</span>
+	</div>
+	<div id="linksGrid" class="links-grid"></div>
+	<!-- NOUVEAU : Zone de pagination -->
+<div id="pagination" class="pagination-container"></div>
+<script type="text/javascript" src="app.js"></script>
+<script>
+ 
+</script>
+</body>
+</html>
