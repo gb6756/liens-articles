@@ -158,7 +158,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     fetch('liens-articles.csv')
         .then(response => {
-            if (!response.ok) throw new throw new Error("Fichier introuvable");
+            if (!response.ok) throw new Error("Fichier introuvable");
             return response.text();
         })
         .then(csvText => {
