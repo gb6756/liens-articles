@@ -158,9 +158,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     fetch('liens-articles.csv')
         .then(response => {
-            if (!response.ok) {
-                throw new throw new Error("Fichier introuvable");
-            }
+            if (!response.ok) throw new throw new Error("Fichier introuvable");
             return response.text();
         })
         .then(csvText => {
@@ -171,8 +169,6 @@ window.addEventListener('DOMContentLoaded', function() {
                 complete: function(res) {
                     if (res.data && res.data.length > 0) {
                         allLinks = res.data;
-                        filteredLinks = [...allLinks]; // Au départ, tous les liens sont affichés
-
                         if (statusEl) {
                             statusEl.style.color = '#16a34a';
                             statusEl.textContent = `✅ ${allLinks.length} liens disponibles`;
@@ -190,10 +186,10 @@ window.addEventListener('DOMContentLoaded', function() {
             });
         })
         .catch(err => {
-            console.error("Erreur de chargement :", err);
+            console.error(err);
             if (statusEl) {
                 statusEl.style.color = '#dc2626';
-                statusEl.textContent = `❌ Impossible de charger le catalogue : ${err.message}`;
+                statusEl.textContent = "❌ Impossible de charger le catalogue.";
             }
         });
 });
