@@ -21,7 +21,10 @@
 
     <!-- Filtres -->
     <div class="card">
-        <h3 style="margin-top:0;">🔍 Filtres de recherche</h3>
+		<div class="filter-header">
+			<h3 style="margin-top:0;">🔍 Filtres de recherche</h3>
+            <button class="btn-reset" onclick="resetFilters()">🔄 Effacer les filtres</button>
+        </div>
         <div class="filter-grid">
             <div class="filter-item"><label>Lieu</label><input type="text" id="fLieu" oninput="applyFilters()"></div>
             <div class="filter-item"><label>Sujet</label><input type="text" id="fSujet" oninput="applyFilters()"></div>

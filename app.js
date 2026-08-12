@@ -146,6 +146,15 @@ function cleanString(str) {
         .toLowerCase()
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, ""); // Supprime tous les diacritiques (accents)
+		// Remise à zéro des filtres
+function resetFilters() {
+    if (document.getElementById('fCote')) document.getElementById('fCote').value = '';
+    if (document.getElementById('fTitre')) document.getElementById('fTitre').value = '';
+    if (document.getElementById('fAuteur')) document.getElementById('fAuteur').value = '';
+    if (document.getElementById('fResume')) document.getElementById('fResume').value = '';
+    applyFilters();
+}
+
 }
 // --- INITIALISATION AU CHARGEMENT DE LA PAGE ---
 window.addEventListener('DOMContentLoaded', function() {
