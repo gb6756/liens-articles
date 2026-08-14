@@ -43,7 +43,7 @@ margin-top: 20px;
 }
 
 /* --- DESIGN DE LA CARTE / PAVÉ --- */
-a:visited .link-card{background:#ffffee}
+/*a:visited .link-card{background:#ffffee}*/
 	.link-card {
 	background-color: #ffffff;
 	border: 1px solid #e2e8f0;
