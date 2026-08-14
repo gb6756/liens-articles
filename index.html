@@ -1,3 +1,46 @@
-<?php
-echo "bonjour";
-?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liens vers articles, documents</title>
+    <!-- Parseur CSV spécialisé -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+	<link rel="stylesheet" media="screen" href="style.css">
+    <style>
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1 style="margin:0;">📚 Liens vers articles, documents ...</h1>
+    </header>
+
+    <!-- Zone de sélection du fichier local -->
+
+    <!-- Filtres -->
+    <div class="card">
+		<div class="filter-header">
+			<h3 style="margin-top:0;">🔍 Filtres de recherche</h3>
+            <button class="btn-reset" onclick="resetFilters()">🔄 Effacer les filtres</button>
+        </div>
+        <div class="filter-grid">
+            <div class="filter-item"><label>Lieu</label><input type="text" id="fLieu" oninput="applyFilters()"></div>
+            <div class="filter-item"><label>Sujet</label><input type="text" id="fSujet" oninput="applyFilters()"></div>
+            <div class="filter-item"><label>Référence</label><input type="text" id="fReference" oninput="applyFilters()"></div>
+            <div class="filter-item"><label>Site Internet</label><input type="text" id="fSite" oninput="applyFilters()"></div>			
+        </div>
+    </div>
+	<div class="results-info">
+		<span id="linkCount">Chargement du catalogue...</span>
+	</div>
+	<div id="linksGrid" class="links-grid"></div>
+	<!-- NOUVEAU : Zone de pagination -->
+<div id="pagination" class="pagination-container"></div>
+<script type="text/javascript" src="app.js"></script>
+<script>
+ 
+</script>
+</body>
+</html>
