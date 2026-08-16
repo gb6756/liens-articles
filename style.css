@@ -12,6 +12,7 @@ color: inherit; /* Conserve la couleur du texte d'origine */
 body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg); margin: 0; padding: 20px; color: #1a202c;}
 .container { max-width: 1200px; margin: 0 auto; }
 header { background: var(--primary); color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+#img-head {text-align:center}
 .card { background: white; padding: 20px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 20px; }
 .filter-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
 .filter-item input { width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; }
